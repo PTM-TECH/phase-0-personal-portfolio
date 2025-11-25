@@ -44,34 +44,33 @@ body {
   background: hsl(120, 79%, 45%);
 }
 
-/* About Section */
 .about {
   background: #fff;
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin: 1em;
 }
 
 .about h2 {
   color: orange;
-  margin-bottom: 10px;
   text-align: center;
   padding: 1em;
   margin: 1em;
 }
 .about p {
   text-align: center;
+  margin-bottom: 1.5em;
 }
 
 .bio-skills {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 15px;
+  margin-left: 1em;
 }
 
 .bio-skills p {
   background: #f0f0f0;
-  padding: 15px;
+  padding: 1em;
   border-radius: 8px;
   line-height: 1.6;
   color: #333;
@@ -81,48 +80,66 @@ body {
   color: green;
 }
 .projects {
-  display: flex;
-  justify-content: center;
-  padding: 1em;
-  margin: 2em;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content";
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: #fff;
+  border-radius: 10px;
+  margin: 1em;
 }
 .projects h2 {
+  grid-area: header;
   color: orange;
-  margin-bottom: 10px;
-  justify-content: center;
+  text-align: center;
+  margin: 1em;
 }
-.articles {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  margin: 0 20px 0 20px;
-}
-.project {
-  background: #fff;
-  padding: 20px;
+.projects .project1 {
+  padding: 1.5em;
+  margin: 2em;
+  border: 0.5px solid black;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border-left: 5px solid orange;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 45%, 0.363);
 }
-
-.project h3 {
+.projects .project2 {
+  padding: 1.5em;
+  margin: 2em;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 45%, 0.363);
+}
+.project1 h3 {
+  color: green;
+}
+.project2 h3 {
   color: green;
 }
 
-.project p {
+.project1 p {
+  line-height: 1.6;
+}
+.project2 p {
   line-height: 1.6;
 }
 
-.project img {
+.project1 img {
   width: 100%;
   max-height: 200px;
   object-fit: cover;
   border-radius: 10px;
 }
-
-/* Responsive */
+.project2 img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.footer {
+  text-align: center;
+  font-weight: bold;
+}
 @media (min-width: 768px) {
   .bio-skills {
     flex-direction: row;
@@ -133,11 +150,11 @@ body {
     width: 48%;
   }
 
-  .articles {
+  .projects {
     flex-direction: row;
   }
 
-  .project {
+  .project1 .project2 {
     width: 48%;
   }
 }
