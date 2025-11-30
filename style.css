@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #f7f7f7;
+  background-color: #f7f7f7;
   color: #333;
   padding: 20px;
 }
@@ -17,10 +17,13 @@ body {
   gap: 20px;
   align-items: center;
   padding: 20px;
-  background: orange;
+  background-color: orange;
   color: #fff;
   border-radius: 10px;
   margin-bottom: 30px;
+}
+.header img {
+  border-radius: 50%;
 }
 
 .header h1 {
@@ -28,23 +31,25 @@ body {
 }
 
 .btn {
-  background: hsl(120, 100%, 25%);
+  background-color: hsl(120, 100%, 25%);
   padding: 10px 20px;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+  transition: 0.5s ease;
 }
 
 .btn:hover {
-  background: hsl(120, 79%, 35%);
+  background-color: hsl(120, 79%, 35%);
+  transform: scale(1.05);
 }
 .btn:active {
-  background: hsl(120, 79%, 45%);
+  background-color: hsl(120, 79%, 45%);
 }
 
 .about {
-  background: #fff;
+  background-color: #fff;
   border-radius: 10px;
   margin: 1em;
 }
@@ -68,7 +73,7 @@ body {
 }
 
 .bio-skills p {
-  background: #f0f0f0;
+  background-color: #f0f0f0;
   padding: 1em;
   border-radius: 8px;
   line-height: 1.6;
@@ -80,80 +85,110 @@ body {
 }
 .projects {
   display: grid;
-  grid-template-areas:
-    "header header"
-    "menu content";
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  background: #fff;
+  background-color: #fff;
   border-radius: 10px;
   margin: 1em;
 }
 .projects h2 {
-  grid-area: header;
+  grid-column: 1 / 5;
   color: orange;
   text-align: center;
   margin: 1em;
 }
-.projects .project1 {
+.projects .project {
+  grid-column: span 2;
   padding: 1.5em;
   margin: 2em;
-  border: 0.5px solid black;
+  border: 0.25px solid hsla(0, 0%, 0%, 0.2);
   border-radius: 10px;
+  text-align: center;
   box-shadow: 5px 5px 5px hsla(0, 0%, 45%, 0.363);
 }
-.projects .project2 {
-  padding: 1.5em;
-  margin: 2em;
-  border: 0.5px solid black;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px hsla(0, 0%, 45%, 0.363);
-}
-.project1 h3 {
+
+.project h3 {
   color: green;
+  margin: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
 }
-.project2 h3 {
-  color: green;
+.project p {
+  line-height: 1.6;
+  margin: 1em;
 }
 
-.project1 p {
-  line-height: 1.6;
-}
-.project2 p {
-  line-height: 1.6;
-}
-
-.project1 img {
+.project img {
   width: 100%;
-  max-height: 200px;
+  max-height: 300px;
   object-fit: cover;
   border-radius: 10px;
 }
-.project2 img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
+#myBtn {
+  font-size: 1em;
+  font-family: Arial;
+  font-weight: bold;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+  transition: transform 1.5s;
+}
+#myBtn:hover {
+  background-color: hsl(120, 100%, 25%);
+  transform: scale(1.05);
+}
+#myBtn:active {
+  background-color: hsl(120, 100%, 35%);
+  transform: scale(1.05);
 }
 .footer {
   text-align: center;
   font-weight: bold;
 }
-@media (min-width: 768px) {
-  .bio-skills {
-    flex-direction: row;
-    gap: 20px;
+@media (max-width: 768px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 15px;
   }
 
-  .bio-skills p {
-    width: 48%;
+  .about {
+    margin: 0.5em;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .projects {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 1em;
   }
 
-  .project1 .project2 {
-    width: 48%;
+  .projects h2 {
+    grid-column: 1;
+    font-size: 1.5rem;
+  }
+
+  .projects .project {
+    grid-column: 1;
+    width: 100%;
+    margin: 0;
+  }
+
+  .bio-skills {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  .bio-skills p {
+    width: 100%;
+    margin: 0;
   }
 }
