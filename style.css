@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", Arial;
 }
 
 body {
@@ -27,15 +27,18 @@ body {
 }
 
 .header h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-family: "Poppins";
+  font-weight: bold;
 }
 
 .btn {
   background-color: hsl(120, 100%, 25%);
-  padding: 10px 20px;
+  padding: 20px 20px;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
+  font-size: 1.5em;
   font-weight: bold;
   transition: 0.5s ease;
 }
@@ -105,6 +108,10 @@ body {
   border-radius: 10px;
   text-align: center;
   box-shadow: 5px 5px 5px hsla(0, 0%, 45%, 0.363);
+  transition: 0.5s ease;
+}
+.projects .project:hover {
+  background-color: hsla(120, 100%, 25%, 0.1);
 }
 
 .project h3 {
@@ -116,6 +123,7 @@ body {
 .project p {
   line-height: 1.6;
   margin: 1em;
+  color: hsla(0, 0%, 0%, 0.8);
 }
 
 .project img {
